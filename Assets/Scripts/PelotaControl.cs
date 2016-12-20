@@ -28,4 +28,10 @@ public class PelotaControl : MonoBehaviour {
 		Texto.text = monedas.ToString ();
 	}
 
+	public void siguienteNivel (){
+		if (monedas == 5){
+			Application.LoadLevel("Nave");
+		}
+
+	}
 }
