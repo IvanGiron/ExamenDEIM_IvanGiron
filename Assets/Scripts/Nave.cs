@@ -6,6 +6,7 @@ public class Nave : MonoBehaviour {
 	private Rigidbody2D rb;
 	public float fuerza = 10f;
 	public GameObject explosion;
+	public float rotation = 0.5f;
 	// Use this for initialization
 	void Start () {
 		rb = GetComponent<Rigidbody2D> ();
@@ -19,6 +20,17 @@ public class Nave : MonoBehaviour {
 
 			rb.AddForce (transform.up*fuerza);
 
+
+		}
+
+		if (Input.GetKey (KeyCode.RightArrow)) {
+
+			rb.AddTorque (-rotation);
+		}
+
+		if (Input.GetKey (KeyCode.LeftArrow)) {
+
+			rb.AddTorque (rotation);
 		}
 
 	}
